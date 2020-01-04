@@ -2,6 +2,8 @@
 package ventana;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -62,23 +64,46 @@ public class Ventana extends JFrame {
         
 }
     private void colocarBotones(){
-        JButton boton1 = new JButton();
+      JButton boton1 = new JButton();
         boton1.setText("solicitudes"); //se establece texto en el boton
         boton1.setBounds(100, 100, 100, 40);
         panel.add(boton1);
         
+        boton1.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                                subVentana v2 = new subVentana();
+
+                        v2.setVisible(true);
+            }
+        });
         
         JButton boton2 = new JButton();
         boton2.setText("quejas");
         boton2.setBounds(300, 100, 100,40);
         panel.add(boton2);
         
+          boton2.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                                subVentana1 v3 = new subVentana1();
+
+                        v3.setVisible(true);
+            }
+        });
+          
         JButton boton3 = new JButton();
         boton3.setText("reclamos");
         boton3.setBounds(200, 200, 100, 40);
         panel.add(boton3);
         
+          boton3.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                                subVentana2 v4 = new subVentana2();
+
+                        v4.setVisible(true);
+            }
+        });
         
     }
+    }
   
-}
+

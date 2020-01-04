@@ -6,10 +6,16 @@
 package ventana;
 
 import java.awt.Color;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -35,7 +41,7 @@ public class subVentana1 extends JFrame {
     private void iniciarComponentes(){
         colocarPaneles();
         colocarEtiquetas();
-        //colocarBotones();
+        colocarBotones();
         
         
     }
@@ -62,6 +68,19 @@ public class subVentana1 extends JFrame {
         panel.add(etiqueta1);//se agrega texto
         
 }
-    
+     private void colocarBotones(){
+      JButton boton1 = new JButton();
+        boton1.setText("Salirse"); //se establece texto en el boton
+        boton1.setBounds(350, 350, 100, 40);
+        panel.add(boton1);
+        
+        boton1.addActionListener(new ActionListener(){
+          public void actionPerformed(ActionEvent e) {
+            JComponent comp = (JComponent) e.getSource();
+            Window win = SwingUtilities.getWindowAncestor(comp);
+            win.dispose();
+}
+        });
+    }
     
 }
