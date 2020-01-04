@@ -71,7 +71,7 @@ public class subVentana2 extends JFrame {
      private void colocarBotones(){
       JButton boton1 = new JButton();
         boton1.setText("Salirse"); //se establece texto en el boton
-        boton1.setBounds(350, 350, 100, 40);
+        boton1.setBounds(10, 400, 80, 30);
         panel.add(boton1);
         
         boton1.addActionListener(new ActionListener(){
